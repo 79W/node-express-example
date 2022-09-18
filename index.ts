@@ -4,6 +4,8 @@ import initDB from './models/db';
 import routes from './routes';
 import config from './config';
 
+import logger from './logger';
+
 const app = express();
 
 // 处理传递参数 body
@@ -17,5 +19,5 @@ routes(app);
 
 const port = config.get('port');
 app.listen(port, () => {
-  console.log(`Express : http://localhost:${port}`);
+  logger.info(`Express : http://localhost:${port}`);
 });
