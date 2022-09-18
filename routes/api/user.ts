@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import userModels from '../../models/user';
 
 export default (router: Router) => {
-  router.get('/user', (req, res) => {
-    res.json({
-      code: 0,
-    });
+  router.get('/user', async (req, res) => {
+    const users = await userModels.userInfo(1);
+    res.json(users);
   });
 };
