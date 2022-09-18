@@ -6,7 +6,6 @@ import userRouter from './user';
 
 export default (app: Express): Router => {
   const router = Router();
-
   insertRouter(router, [userRouter, loginRouter]);
 
   return router;

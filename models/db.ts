@@ -14,9 +14,9 @@ const sequelizeExample = new Sequelize({
 const initMysql = async () => {
   try {
     await sequelizeExample.authenticate();
-    logger.info('mysql 链接成功。');
+    logger.info('MySQL database connection succeeded.');
   } catch (error) {
-    logger.error(`mysql 链接错误: ${error}`);
+    logger.error(`MySQL database link error: ${error}`);
   }
 
   return sequelizeExample;
@@ -26,9 +26,9 @@ const initMongo = async () => {
   const uri = Config.get('mongodb_config').uri;
   try {
     await mongoose.connect(uri);
-    logger.info('mongoose 链接成功。');
+    logger.info('Mongoose database connection succeeded.');
   } catch (error) {
-    logger.error(`mongoose 链接错误: ${error}`);
+    logger.error(`Mongoose database link error: ${error}`);
   }
 };
 
