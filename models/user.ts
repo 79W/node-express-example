@@ -1,11 +1,24 @@
-import { User } from './entitys/user.entity';
-import { mysqlConnection } from './index';
-const userModel = mysqlConnection.getRepository(User);
+import { DataTypes } from 'sequelize';
+import { sequelizeExample } from './index';
+
+const User = sequelizeExample.define(
+  'user',
+  {
+    name: {
+      type: DataTypes.STRING,
+    },
+    age: {
+      type: DataTypes.NUMBER,
+    },
+  },
+  {
+    timestamps: false,
+    freezeTableName: true,
+  },
+);
 
 export const userInfo = async (openid) => {
-  console.log('进来了');
-  const users = await userModel.find();
-  console.log(users);
+  const users = await User.findAll();
   return users;
 };
 

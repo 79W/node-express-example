@@ -1,18 +1,13 @@
 module.exports = {
   port: 5279,
   mysql_config: {
-    type: 'mysql',
+    dialect: 'mysql',
     host: '49.232.144.156',
     port: 3306,
     username: 'masscode_test',
     password: 'masscodeTestMysql_niyongyuanyecaibudao',
     database: 'masscode_test',
-    timezone: 'Z',
-    charset: 'utf8mb4',
-    entities: [],
-    synchronize: false,
-    logging: true,
-    logger: 'advanced-console',
+    timezone: '+08:00',
   },
   // Mongodb 数据库配置
   mongodb_config: {
