@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import userModels from '../../models/user';
+import { userModels } from '../../models';
 
 export default (router: Router) => {
   router.get('/user', async (req, res) => {
